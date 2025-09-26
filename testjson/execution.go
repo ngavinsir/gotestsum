@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	"golang.org/x/sync/errgroup"
 	"github.com/ngavinsir/gotestsum/internal/log"
+	"golang.org/x/sync/errgroup"
 )
 
 // Action of TestEvent
@@ -197,7 +197,7 @@ func (p *Package) OutputLines(tc TestCase) []string {
 
 func (p *Package) addOutput(id int, output string) {
 	if strings.HasPrefix(output, "panic: ") {
-		fmt.Printf("panic output: %s\n", output)
+		panic(fmt.Sprintf("panic output: %s\n", output))
 		p.panicked = true
 	}
 	// TODO: limit size of buffered test output
@@ -605,6 +605,15 @@ func (e *Execution) HasPanic() bool {
 		}
 	}
 	return false
+}
+
+func (e *Execution) LogPanicked() string {
+	for _, pkg := range e.packages {
+		if pkg.panicked {
+			return fmt.Sprintf("panicked pkg: %+v\n", pkg.Failed)
+		}
+	}
+	return ""
 }
 
 func (e *Execution) end() []TestEvent {
