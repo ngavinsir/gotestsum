@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"github.com/fsnotify/fsnotify"
-	"gotest.tools/gotestsum/internal/log"
+	"github.com/ngavinsir/gotestsum/internal/log"
 )
 
 const maxDepth = 7

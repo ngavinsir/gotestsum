@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"sort"
 
-	"gotest.tools/gotestsum/testjson"
+	"github.com/ngavinsir/gotestsum/testjson"
 )
 
 type rerunOpts struct {

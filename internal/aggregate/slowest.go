@@ -4,7 +4,7 @@ import (
 	"sort"
 	"time"
 
-	"gotest.tools/gotestsum/testjson"
+	"github.com/ngavinsir/gotestsum/testjson"
 )
 
 // Slowest returns a slice of all tests with an elapsed time greater than

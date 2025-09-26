@@ -9,7 +9,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"gotest.tools/gotestsum/testjson"
+	"github.com/ngavinsir/gotestsum/testjson"
 	"gotest.tools/v3/assert"
 )
 

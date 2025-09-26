@@ -10,8 +10,8 @@ import (
 	"strings"
 
 	"golang.org/x/tools/go/packages"
-	"gotest.tools/gotestsum/internal/log"
-	"gotest.tools/gotestsum/testjson"
+	"github.com/ngavinsir/gotestsum/internal/log"
+	"github.com/ngavinsir/gotestsum/testjson"
 )
 
 func writeTestSkip(tcs []testjson.TestCase, skipStmt ast.Stmt) error {
