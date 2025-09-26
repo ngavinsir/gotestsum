@@ -1,4 +1,4 @@
-module gotest.tools/gotestsum
+module github.com/ngavinsir/gotestsum
 
 require (
 	github.com/dnephin/pflag v1.0.7
