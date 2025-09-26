@@ -419,6 +419,7 @@ func (p *Package) addTestEvent(event TestEvent) {
 			p.testTimeoutPanicInTest = event.Test
 		}
 		if p.testTimeoutPanicInTest == event.Test {
+			panic(fmt.Sprintf("test panic: %s %+v %+v\n", event.Test, event, p))
 			p.addOutput(0, event.Output)
 			return
 		}
