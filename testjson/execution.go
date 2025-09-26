@@ -197,6 +197,7 @@ func (p *Package) OutputLines(tc TestCase) []string {
 
 func (p *Package) addOutput(id int, output string) {
 	if strings.HasPrefix(output, "panic: ") {
+		fmt.Printf("panic output: %s\n", output)
 		p.panicked = true
 	}
 	// TODO: limit size of buffered test output
@@ -599,6 +600,7 @@ func (e *Execution) Errors() []string {
 func (e *Execution) HasPanic() bool {
 	for _, pkg := range e.packages {
 		if pkg.panicked {
+			fmt.Printf("panicked pkg: %+v\n", pkg.Failed)
 			return true
 		}
 	}
